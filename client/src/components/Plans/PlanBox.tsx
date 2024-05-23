@@ -1,9 +1,53 @@
 import React from "react";
+import Button from "../Button";
 
 type Props = {};
 
 const PlanBox = (props: Props) => {
-  return <div>PlanBox</div>;
+  return (
+    <div className="relative w-[20rem] border-2 flex flex-col gap-4 rounded-lg border-black ">
+      <div className="absolute h-[4.5rem] text-2xl text-center w-[110%] bg-blue-900 text-white font-semibold -translate-x-[5%]  -top-5">
+        <h1>
+          Standard <br /> Plan
+        </h1>
+      </div>
+      <div className="absolute h-10 top-[calc(4.5rem-1.3rem)] w-[110%] -translate-x-[5%] triangle bg-blue-900">
+        df
+      </div>
+
+      <ul className="ml-10 mt-24">
+        <li className="list-disc">Sample</li>
+        <li className="list-disc">Sample</li>
+        <li className="list-disc">Sample</li>
+        <li className="list-disc">Sample</li>
+        <li className="list-disc">Sample</li>
+      </ul>
+      <div>
+        <Button
+          text="Free"
+          onClick={() => console.log("dfg")}
+          className="bg-yellow-200 w-[110%] -translate-x-[5%] text-2xl font-semibold text-black"
+        />
+      </div>
+      <div className="flex justify-center">
+        <Button
+          text="Buy now"
+          onClick={() => console.log("dfg")}
+          className=""
+        />
+      </div>
+      <div>
+        <h1 className="text-center font-semibold">Test Coverage</h1>
+        <ul className="ml-10">
+          <li className="list-disc">Sample</li>
+          <li className="list-disc">Sample</li>
+          <li className="list-disc">Sample</li>
+          <li className="list-disc">Sample</li>
+          <li className="list-disc">Sample</li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default PlanBox;
