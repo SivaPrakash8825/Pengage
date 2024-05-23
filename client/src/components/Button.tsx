@@ -12,7 +12,7 @@ const Button = ({ text, onClick, type = "primary" }: Props) => {
         type == "primary"
           ? "bg-blue-700  text-white border-2 border-blue-700"
           : "bg-white  text-blue-700 border-2 border-blue-700"
-      } capitalize rounded-md  py-2 px-8 `}
+      } capitalize rounded-md  py-2 px-10 `}
     >
       {text}
     </button>
