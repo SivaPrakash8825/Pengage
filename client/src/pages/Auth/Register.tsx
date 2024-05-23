@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "../../assets/react.svg";
 import InputField from "../../components/InputField";
 import ProgressState from "../../components/ProgressState";
+import Button from "../../components/Button";
 
 type Props = {};
 
@@ -10,7 +11,7 @@ const Register = (props: Props) => {
   const [password, setPassword] = useState("");
   return (
     <div className="w-4/6 flex overflow-hidden rounded-md shadow-xl bg-white">
-      <section className=" text-white text-center px-5 flex flex-col justify-center items-center gap-y-3 w-[35%] bg-blue-700">
+      <section className=" text-white text-center px-5 flex flex-col justify-center items-center gap-y-3 w-[35%] bg-[#5356FF]">
         <img src={Image} className=" w-1/2 h-auto" alt="" />
         <h1 className=" text-3xl tracking-widest font-bold">
           QuarkSek <br /> Technologies
@@ -23,14 +24,14 @@ const Register = (props: Props) => {
       <section className=" flex-1 flex  flex-col gap-8 justify-center items-center text-center py-20">
         <ProgressState />
         {/* heading */}
-        <div className="   flex flex-col mb-5 ">
+        <div className="   flex flex-col">
           <h1 className=" capitalize text-[2rem] font-black tracking-wider text-blue-600">
             sign up
           </h1>
         </div>
         {/* inputs */}
         <div className=" w-2/3">
-          <div className="flex flex-col gap-y-8">
+          <div className="flex flex-col gap-y-10">
             <InputField
               label="Full Name"
               warning="Enter the valid email ID"
@@ -55,9 +56,7 @@ const Register = (props: Props) => {
           </div>
           <p className=" capitalize text-right text-sm">forget password?</p>
         </div>
-        <button className=" capitalize rounded-md bg-blue-700 py-1 px-7 text-white">
-          sign in
-        </button>
+        <Button text="sign in" onClick={() => console.log("sign in")} />
         <p>
           Already have an account ?{" "}
           <span className=" text-blue-700">Sign In</span>

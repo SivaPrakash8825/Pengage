@@ -5,7 +5,7 @@ import Register from "./pages/Auth/Register";
 
 function App() {
   return (
-    <div className=" w-screen h-screen flex justify-center items-center bg-slate-400">
+    <div className=" w-screen h-screen flex justify-center items-center bg-bg bg-contain">
       <Routes>
         <Route element={<Login />} path="/"></Route>
         <Route element={<Register />} path="/register"></Route>

@@ -37,15 +37,17 @@ const InputField = ({ label, warning, value, setValue, regex }: Props) => {
       />
       {/* label */}
       <label
-        className=" absolute text-gray-700 top-2 left-4 peer-focus:-top-3  peer-invalid:top-2 peer-valid:-top-3 peer-focus:text-sm  bg-white  transition-all pointer-events-none peer-valid:text-sm"
-        htmlFor="input">
+        className=" absolute text-gray-700 top-2 left-4 peer-focus:-top-3  peer-invalid:top-2 peer-valid:-top-3 peer-focus:text-sm select-none  bg-white px-1 transition-all pointer-events-none peer-valid:text-sm"
+        htmlFor="input"
+      >
         {label}
       </label>
       {/* warning */}
       {invalid && (
         <label
           htmlFor="input"
-          className="absolute left-1 top-full text-sm text-red-600">
+          className="absolute left-1 top-full text-sm text-red-600"
+        >
           {warning}
         </label>
       )}
