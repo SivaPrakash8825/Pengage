@@ -12,15 +12,17 @@ const Login = (props: Props) => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="w-4/6 flex overflow-hidden rounded-md shadow-xl bg-white">
+    <div className="flex w-4/6 overflow-hidden rounded-md bg-white shadow-xl">
       <LeftsideBox />
-      <section className=" flex-1 flex  flex-col gap-8 justify-center items-center text-center py-20">
+      <section className=" flex flex-1  flex-col items-center justify-center gap-8 py-20 text-center">
         {/* heading */}
-        <div className="   flex flex-col mb-5 gap-y-3">
+        <div className="   mb-5 flex flex-col gap-y-3">
           <h1 className="  text-[2rem] font-[700]  text-[#5356FF]">
             Welcome to Pengage
           </h1>
-          <h1 className=" font-[700] text-[1.5rem]">Sign in to continue</h1>
+          <h1 className=" text-tex text-[1.5rem] font-[700] ">
+            Sign in to continue
+          </h1>
         </div>
         {/* inputs */}
         <div className=" w-2/3">
@@ -40,14 +42,16 @@ const Login = (props: Props) => {
               regex={/^[^s@]+@[^s@]+.[^s@]+$/}
             />
           </div>
-          <Link to={""} className="block capitalize text-right text-sm">
+          <Link to={""} className="block text-right text-sm capitalize">
             forget password?
           </Link>
         </div>
         <Button text="sign in" onClick={() => console.log("sign in")} />
         <p>
           New User?{"    "}
-          <Link to={"/register"} className="ml-2 text-blue-700 font-semibold">SIGN UP NOW</Link>
+          <Link to={"/register"} className="ml-2 font-semibold text-blue-700">
+            SIGN UP NOW
+          </Link>
         </p>
       </section>
     </div>

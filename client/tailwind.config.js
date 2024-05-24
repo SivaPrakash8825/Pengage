@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -15,6 +16,7 @@ export default {
         primary2: "#202161",
       },
       colors: {
+        load: colors.violet,
         bgClr: "#FBFFF4",
         primary: "#DFF5FF",
         secondary: "#5356FF",

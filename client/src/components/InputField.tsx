@@ -40,9 +40,9 @@ const InputField = ({
       <input
         value={value}
         onChange={handleOnchange}
-        className={`border-2 px-3 w-full py-2 peer  ${
+        className={`peer w-full border-2 px-3 py-2  ${
           invalid ? "border-red-600" : "border-blue-600"
-        } border-black outline-none rounded-md disabled:bg-gray-300 disabled:border-gray-400 disabled:text-gray-500 disabled:cursor-not-allowed`}
+        } rounded-md border-black outline-none disabled:cursor-not-allowed disabled:border-gray-400 disabled:bg-gray-300 disabled:text-gray-500`}
         id="input"
         name="input"
         required
@@ -50,7 +50,7 @@ const InputField = ({
       />
       {/* label */}
       <label
-        className=" absolute text-gray-500 top-2 left-3 peer-focus:-top-3  peer-invalid:top-2 peer-valid:-top-3 peer-focus:text-sm select-none  bg-white px-1 peer-disabled:bg-transparent  transition-all pointer-events-none peer-valid:text-sm"
+        className=" pointer-events-none absolute left-3 top-2 select-none  bg-white px-1 text-gray-500 transition-all  peer-valid:-top-3 peer-valid:text-sm peer-invalid:top-2  peer-focus:-top-3 peer-focus:text-sm peer-disabled:bg-transparent"
         htmlFor="input"
       >
         {label}
@@ -59,11 +59,11 @@ const InputField = ({
       {invalid && (
         <label
           htmlFor="input"
-          className="absolute gap-1 flex left-1 top-[105%] text-sm text-red-600"
+          className="absolute left-1 top-[105%] flex gap-1 text-sm text-red-600"
         >
           <img
             src={WarningImg}
-            className="w-[1rem] my-auto object-contain"
+            className="my-auto w-[1rem] object-contain"
             alt="WarningImg"
           />
           {warning}

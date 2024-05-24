@@ -20,16 +20,16 @@ const Home = (props: Props) => {
     { name: "Action", icon: "" },
   ];
   return (
-    <div className=" w-full h-full">
+    <div className=" h-full w-full">
       <Navbar />
-      <section className=" w-full h-auto py-5 flex justify-center items-center">
+      <section className=" flex h-auto w-full items-center justify-center py-5">
         <table>
           <thead>
             <tr>
-              <th className="border border-black px-4 bg-primary text-nowrap py-4"></th>
+              <th className="text-nowrap border border-black bg-primary px-4 py-4"></th>
               {heading.map((data) => {
                 return (
-                  <th className=" capitalize bg-primary border border-black px-3 text-nowrap py-3">
+                  <th className=" text-nowrap border border-black bg-primary px-3 py-3 capitalize">
                     <p className=" flex items-center justify-center gap-x-3">
                       {data.name} <span>{data.icon}</span>
                     </p>
@@ -40,7 +40,7 @@ const Home = (props: Props) => {
           </thead>
           <tbody>
             <tr className="">
-              <td className=" border w-5    border-black ">
+              <td className=" w-5 border    border-black ">
                 <div className="flex items-center justify-center">
                   <p className=" bg-gray-400 ">
                     <TiArrowSortedDown />
@@ -53,7 +53,37 @@ const Home = (props: Props) => {
               <td className=" border border-black"></td>
               <td className=" border border-black"></td>
               <td className=" border border-black   ">
-                <div className="gap-x-7 py-4 px-4 flex text-xl ">
+                <div className="flex gap-x-7 px-4 py-4 text-xl ">
+                  <p>
+                    <FaPen />
+                  </p>
+                  <p>
+                    <FaCircleArrowUp />
+                  </p>
+                  <p>
+                    <GoDownload />
+                  </p>
+                  <p>
+                    <IoIosMail />
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr className="">
+              <td className=" w-5 border    border-black ">
+                <div className="flex items-center justify-center">
+                  <p className=" bg-gray-400 ">
+                    <TiArrowSortedDown />
+                  </p>
+                </div>
+              </td>
+              <td className=" border border-black"></td>
+              <td className=" border border-black"></td>
+              <td className=" border border-black"></td>
+              <td className=" border border-black"></td>
+              <td className=" border border-black"></td>
+              <td className=" border border-black   ">
+                <div className="flex gap-x-7 px-4 py-4 text-xl ">
                   <p>
                     <FaPen />
                   </p>
