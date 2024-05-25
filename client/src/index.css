@@ -5,3 +5,7 @@
 .triangle {
   clip-path: polygon(50% 80%, 0 0, 100% 0);
 }
+
+.pentagon {
+  clip-path: polygon(100% 0, 100% 60%, 49% 91%, 0 60%, 0 0);
+}

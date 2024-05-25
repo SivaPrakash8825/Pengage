@@ -3,16 +3,20 @@ import WarningImg from "../assets/warning.png";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
+  name: string;
   label: string;
   warning: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   regex: RegExp;
+  onError: (name: string, error: string) => void;
   className?: string;
   disabled?: boolean;
+  errorMsg: string;
 };
 
 const InputField = ({
+  name,
   label,
   warning,
   value,
@@ -20,19 +24,27 @@ const InputField = ({
   regex,
   className,
   disabled = false,
+  onError,
+  errorMsg,
 }: Props) => {
-  const [invalid, setInvalid] = useState(false);
+  const [touched, setTouched] = useState(false);
 
+  const handleBlur = () => {
+    setTouched(true);
+  };
   const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    if (regex.test(e.target.value)) {
-      setInvalid(false);
-    } else {
-      setInvalid(true);
+    const newValue = e.target.value;
+    setValue(newValue);
+
+    let validationError = "";
+    if (newValue.trim() === "") {
+      validationError = `${label} is required`;
+    } else if (!regex.test(newValue)) {
+      validationError = errorMsg!;
     }
-    if (!e.target.value) {
-      setInvalid(true);
-    }
+
+    // setError(validationError);
+    onError(name, validationError);
   };
 
   return (
@@ -41,12 +53,13 @@ const InputField = ({
         value={value}
         onChange={handleOnchange}
         className={`border-2 px-3 w-full py-2 peer  ${
-          invalid ? "border-red-600" : "border-blue-600"
+          warning ? "border-red-600" : "border-blue-600"
         } border-black outline-none rounded-md disabled:bg-gray-300 disabled:border-gray-400 disabled:text-gray-500 disabled:cursor-not-allowed`}
         id="input"
         name="input"
         required
         disabled={disabled}
+        onBlur={handleBlur}
       />
       {/* label */}
       <label
@@ -56,7 +69,7 @@ const InputField = ({
         {label}
       </label>
       {/* warning */}
-      {invalid && (
+      {warning && (
         <label
           htmlFor="input"
           className="absolute gap-1 flex left-1 top-[105%] text-sm text-red-600"

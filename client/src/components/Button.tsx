@@ -5,11 +5,19 @@ type Props = {
   onClick: () => void;
   type?: "primary" | "secondary";
   className?: string;
+  btnType?: "button" | "submit";
 };
 
-const Button = ({ text, onClick, type = "primary", className }: Props) => {
+const Button = ({
+  text,
+  onClick,
+  type = "primary",
+  className,
+  btnType = "button",
+}: Props) => {
   return (
     <button
+      type={btnType}
       onClick={onClick}
       className={twMerge(
         `${

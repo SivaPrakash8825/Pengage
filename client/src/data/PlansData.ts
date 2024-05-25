@@ -1,0 +1,61 @@
+export const PlansData = [
+  {
+    name: "Basic",
+    details: [
+      "Single Target (or) Functionality Scope",
+      "Single User Role",
+      "No Remediation Testing",
+      "Detailed Test Report",
+      "Suitable for Early stage Start-ups",
+    ],
+    coverages: [
+      "Basic OWASP Top 10 Coverage",
+      "Basic Authentication Checks",
+      "Sensitive Information Disclosure",
+      "Session Management",
+    ],
+  },
+  {
+    name: "Standard",
+    details: [
+      "Single Target (or) Functionality Scope",
+      "Single User Role",
+      "Paid Remediation Testing",
+      "Detailed Test Report",
+      "Suitable for Start-ups Onboarding Customers",
+    ],
+    coverages: [
+      "Limited OWASP Top 10 Coverage",
+      "Basic Authentication Checks",
+      "Sensitive Information Disclosure",
+      "Session Management",
+      "Limited Authorization",
+      "Limited Secure Files and Resources",
+      "Server Configuration",
+    ],
+  },
+  {
+    name: "Premium",
+    details: [
+      "Complete Web Application Scope",
+      "All User Roles",
+      "1 Free Remediation Testing included",
+      "Detailed Test Report",
+      "Suitable for Complex Web Applications",
+    ],
+    coverages: [
+      "Complete OWASP Top 10 Coverage",
+      "Basic Authentication Checks",
+      "Sensitive Information Disclosure",
+      "Session Management",
+      "Complete Authorization",
+      "Complete Secure Files and Resources",
+      "Server Configuration",
+      "Injections",
+      "Cross Site Scripting",
+      "Advanced Authentication Checks",
+      "Websocket",
+      "Business Logic",
+    ],
+  },
+];

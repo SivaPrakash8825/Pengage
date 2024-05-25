@@ -1,32 +1,36 @@
 import React from "react";
 import Button from "../Button";
+import { PlansData } from "../../data/PlansData";
 
-type Props = {};
+type Props = {
+  keyy: number;
+  plan: (typeof PlansData)[0];
+};
 
-const PlanBox = (props: Props) => {
+const PlanBox = ({ keyy, plan }: Props) => {
+  console.log(keyy);
+
   return (
-    <div className="relative w-[20rem] border-2 flex flex-col gap-4 rounded-lg border-black ">
-      <div className="absolute h-[4.5rem] text-2xl text-center w-[110%] bg-blue-900 text-white font-semibold -translate-x-[5%]  -top-5">
-        <h1>
-          Standard <br /> Plan
+    <div
+      key={keyy}
+      className="relative w-[20rem] py-5 border-2 flex flex-col gap-4 rounded-lg border-black "
+    >
+      <div className="absolute pentagon h-[7.5rem] text-2xl  text-center w-[110%] bg-[#202161] text-white font-semibold -translate-x-[5%]  -top-5">
+        <h1 className=" text-center mt-4">
+          {plan.name} <br /> Plan
         </h1>
       </div>
-      <div className="absolute h-10 top-[calc(4.5rem-1.3rem)] w-[110%] -translate-x-[5%] triangle bg-blue-900">
-        df
-      </div>
 
-      <ul className="ml-10 mt-24">
-        <li className="list-disc">Sample</li>
-        <li className="list-disc">Sample</li>
-        <li className="list-disc">Sample</li>
-        <li className="list-disc">Sample</li>
-        <li className="list-disc">Sample</li>
+      <ul className="pl-8 mt-24 ">
+        {plan.details.map((detail, i) => {
+          return <li className="list-disc">{detail}</li>;
+        })}
       </ul>
       <div>
         <Button
           text="Free"
           onClick={() => console.log("dfg")}
-          className="bg-yellow-200 w-[110%] -translate-x-[5%] text-2xl font-semibold text-black"
+          className="bg-[#FFF800] w-[110%] uppercase -translate-x-[5%] text-2xl font-semibold text-black border-none"
         />
       </div>
       <div className="flex justify-center">
@@ -37,13 +41,11 @@ const PlanBox = (props: Props) => {
         />
       </div>
       <div>
-        <h1 className="text-center font-semibold">Test Coverage</h1>
-        <ul className="ml-10">
-          <li className="list-disc">Sample</li>
-          <li className="list-disc">Sample</li>
-          <li className="list-disc">Sample</li>
-          <li className="list-disc">Sample</li>
-          <li className="list-disc">Sample</li>
+        <h1 className="text-center font-semibold uppercase">Test Coverage</h1>
+        <ul className="pl-8 mt-3">
+          {plan.coverages.map((coverage, i) => {
+            return <li className="list-disc">{coverage}</li>;
+          })}
         </ul>
       </div>
     </div>
